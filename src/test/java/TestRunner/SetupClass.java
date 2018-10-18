@@ -47,7 +47,7 @@ public class SetupClass {
 
 		PropertyConfigurator.configure("log4j.properties");
 		log = Logger.getLogger("devpinoyLogger");
-		property.load(new FileReader("F:\\ECOM_DemoTest\\Automate\\src\\main\\resources\\configure.properties"));
+		property.load(new FileReader("F:\\ECOM_DemoTest\\Automate\\Automate\\src\\main\\resources\\configure.properties"));
 		AppURL = property.getProperty("App_url");
 		sauceURL = property.getProperty("sauce_url");
 		deviceName = property.getProperty("device_name");
