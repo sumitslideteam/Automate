@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = {"."}, format ={
-		"pretty", "html:target"},
+		"pretty", "html:target/cucumber","json:target/cucumber.json", "usage:target/usage.jsonx", "junit:target/junit.xml"},
 tags= {"@signupTest"})
 public class TestRun {
 	@BeforeClass

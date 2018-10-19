@@ -36,6 +36,22 @@ public class SignupObject {
 	public static By repeat_errormessage = By.cssSelector("advice-required-entry-confirmation");
 	public static By captcha = By.cssSelector("advice-required-entry-captcha_user_create");
 	
+	
+	//price element
+	public static By Monthly_Price = By.cssSelector(".btn.btn-primary.join-now.monthly-join-now");
+	public static By Semi_Price = By.cssSelector(".btn.btn-primary.join-now.semi-annual-join-now");
+	public static By Annual_Price = By.cssSelector(".btn.btn-primary.join-now.annual-join-now");
+	public static By AnnualCustom_Price = By.cssSelector(".btn.btn-primary.join-now.annual-custom-join-now");
+	public static By Team_Price = By.cssSelector(".btn.btn-primary.join-now.team-join-now");
+	
+	// apply Coupan
+	public static By Enter_Coupon = By.id("coupon_code");
+	public static By Apply_Coupon = By.cssSelector("#couponapply[title='Apply Coupon']");
+
+//See the discount price is applied 
+	public static By Applied_Coupon = By.cssSelector(".data-table.table>tfoot>tr:nth-child(2)");
+	
+	
 }
 
 
