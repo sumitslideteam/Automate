@@ -9,9 +9,8 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"."}, format ={
-		"pretty", "html:target/cucumber","json:target/cucumber.json", "usage:target/usage.jsonx", "junit:target/junit.xml"},
-tags= {"@signupTest"})
+@CucumberOptions(features = {"."},tags= {"@signupTest"}, format ={
+		"pretty", "html:target/cucumber-html-report","json:target/cucumber.json", "usage:target/usage.jsonx", "junit:target/cucumber.xml"})
 public class TestRun {
 	@BeforeClass
 	public static void beforeClass() throws Exception {

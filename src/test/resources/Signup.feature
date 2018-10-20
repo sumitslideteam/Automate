@@ -3,10 +3,10 @@ Feature: signup Test On Web Application
 Scenario: 
 
 	Given Navigates to website url. 
-	Then Click on Most Downloaded link. 
-	Then Select a product items. 
-	Then Click on Download this presentation link. 
-	Then Click on Create an Account CTA. 
+#	Then Click on Most Downloaded link. 
+#	Then Select a product items. 
+#	Then Click on Download this presentation link. 
+#	Then Click on Create an Account CTA. 
 	
 #Scenario Outline: Data driving for invalid data forsign-up. 
 #	Then Enter Email Address as "<Email Address>". 
@@ -31,17 +31,17 @@ Scenario:
 #		|qwr@gmail.com       |    Test         |   Test      |    123456       |         654221     |                          |                            |                          |                                                                               | Please make sure your passwords match.|                                                                                                                                                             |                                                                                                                                
 #		|qwr@gmail.com       |    Test         |   Test      |  123456         |   123456           |                          |                            |                          |                                                                               |                                       |There is already an account with this email address. If you are sure that it is your email address, click here to get your password and access your account. |                               
 		
-Scenario Outline: Data driving for valid sign-up. 
-	Then Enter Email "<Email Address>". 
-	Then Enter First Name as "<First Name>". 
-	Then Enter Last Name as "<Last Name>". 
-	Then Enter Password as "<Password>". 
-	Then Enter Confirm password as "<Confirm_password>". 
-	Then Enter the captcha. 
-	Then click on Signup button. 
-	Examples: 
-		|Email Address       |  First Name     | Last Name   |  Password       | Confirm_password   | 
-		|qwr@gmail.com       |    Test         |   Test      |  123456         |   123456           |            
+#Scenario Outline: Data driving for valid sign-up. 
+#	Then Enter Email "<Email Address>". 
+#	Then Enter First Name as "<First Name>". 
+#	Then Enter Last Name as "<Last Name>". 
+#	Then Enter Password as "<Password>". 
+#	Then Enter Confirm password as "<Confirm_password>". 
+#	Then Enter the captcha. 
+#	Then click on Signup button. 
+#	Examples: 
+#		|Email Address       |  First Name     | Last Name   |  Password       | Confirm_password   | 
+#		|qwr@gmail.com       |    Test         |   Test      |  123456         |   123456           |            
 #Scenario: 
 #	Given After signup see the price page. 
 #	Then Select price subscription 
