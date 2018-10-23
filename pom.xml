@@ -43,47 +43,5 @@
     <artifactId>log4j</artifactId>
     <version>1.2.17</version>
 </dependency>
-<!-- https://mvnrepository.com/artifact/io.appium/java-client -->
-<dependency>
-    <groupId>io.appium</groupId>
-    <artifactId>java-client</artifactId>
-    <version>6.1.0</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/com.github.temyers/cucumber-jvm-parallel-plugin -->
-			<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-jvm -->
-<dependency>
-    <groupId>info.cukes</groupId>
-    <artifactId>cucumber-jvm</artifactId>
-    <version>1.2.5</version>
-    <type>pom</type>
-</dependency>
-<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
   </dependencies>
- 
-  <build>
-		<plugins>
-			<plugin>
-
-  <groupId>net.masterthought</groupId>
-    <artifactId>cucumber-reporting</artifactId>
-    <version>4.1.0</version>  
-			<executions>
-                    <execution>
-                        <id>execution</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <projectName>cucumber-jvm-example</projectName>
-                            <outputDirectory>${project.build.directory}/site/cucumber-reports</outputDirectory>
-                            <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-                            <enableFlashCharts>false</enableFlashCharts>
-                            <skippedFails>true</skippedFails>
-                        </configuration>
-                    </execution>
-                </executions>
-			</plugin>
-		</plugins>
-	</build>
 </project>

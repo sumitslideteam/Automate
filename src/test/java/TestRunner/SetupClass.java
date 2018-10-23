@@ -14,7 +14,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import io.appium.java_client.android.AndroidDriver;
 import webApp.CommonData;
 
 public class SetupClass {
@@ -97,8 +96,8 @@ public class SetupClass {
 			cab.setCapability("platformVersion", "7.1.1");
 			cab.setBrowserName("chrome");
 
-			driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), cab);
-			Thread.sleep(2000);
+//			driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), cab);
+//			Thread.sleep(2000);
 
 		} else if ((oncloud.equals("yes")) && onmobile.equals("no")) {
 			AppURL = property.getProperty("base_url");
