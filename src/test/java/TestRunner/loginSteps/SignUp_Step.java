@@ -24,7 +24,7 @@ public class SignUp_Step extends SetupClass {
 	@Given("^Navigates to website url\\.$")
 	public void navigates_to_website_url() throws InterruptedException {
 		// Maximize Windows
-		driver.get(AppURL);
+		driver.get("https://www.slideteam.net");
 		Thread.sleep(2000);
 		webelement = driver.findElement(SignupObject.close_add);
 		webelement.click();
