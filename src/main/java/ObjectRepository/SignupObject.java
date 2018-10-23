@@ -52,6 +52,19 @@ public class SignupObject {
 	public static By Applied_Coupon = By.cssSelector(".data-table.table>tfoot>tr:nth-child(2)");
 	
 	
+	// the payment option as paypal
+	
+	
+	public static By paypal = By.cssSelector("#payment_form_paypal_standard>li");
+	
+	public static By verifypayment=By.cssSelector("#footerhps>p:nth-child(1)");
+	
+	
+	// 
+	
+	
+	public static By cartpay=By.id("p_method_tco");
+	public static By card_text = By.cssSelector("#dt_method_tco>label");
 }
 
 

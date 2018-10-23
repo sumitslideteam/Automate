@@ -1,7 +1,8 @@
-package TestRunner.loginSteps;
+package TestRunner.loginSteps;import java.util.List;
 import java.util.Random;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
@@ -239,9 +240,11 @@ public class SignUp_Step extends SetupClass {
 //		WebElement custom=driver.findElement(SignupObject.AnnualCustom_Price);
 //		WebElement Team=driver.findElement(SignupObject.Team_Price);
 		
+		
+		
+		
 		js.executeScript("arguments[0].click();", month);
 		Thread.sleep(1000);
-		
 	}
 
 	@Then("^apply the coupon code$")

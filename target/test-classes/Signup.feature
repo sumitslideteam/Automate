@@ -46,4 +46,13 @@ Scenario:
 	Given After signup see the price page. 
 	Then Select price subscription 
 	Then apply the coupon code 
-	Then verify the applied coupon code
+	Then verify the applied coupon code 
+	
+	
+	
+	
+	
+	
+	
+	
+	

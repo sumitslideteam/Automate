@@ -50,11 +50,6 @@
     <version>6.1.0</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/com.github.temyers/cucumber-jvm-parallel-plugin -->
-<dependency>
-    <groupId>com.github.temyers</groupId>
-    <artifactId>cucumber-jvm-parallel-plugin</artifactId>
-    <version>5.0.0</version>
-</dependency>
 			<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-jvm -->
 <dependency>
     <groupId>info.cukes</groupId>
