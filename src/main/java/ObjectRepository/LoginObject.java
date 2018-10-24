@@ -9,10 +9,8 @@ public class LoginObject {
 	
 	// Error message for invalid data
 	public static By uesremail_val=By.id("advice-required-entry-email");
-	public static By error_val=By.id("advice-required-entry-email");
+	public static By error_val=By.id(".error-msg>ul>li>span");
 	public static By pass_val=By.id("advice-required-entry-pass");
-	public static By passlength_val=By.id("advice-validate-password-pass");
-	
 	public static By sign_in= By.cssSelector(".account-login>ul>li>ul>li>span");
 	
 
