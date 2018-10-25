@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import ObjectRepository.SignupObject;
 import TestRunner.SetupClass;
 import cucumber.api.java.en.Given;
@@ -72,7 +71,7 @@ public class SignUp_Step extends SetupClass {
 	public void reate_an_Account_CTA() throws InterruptedException {
 		webelement = driver.findElement(SignupObject.create);
 		webelement.click();
-		Thread.sleep(1000);
+		Thread.sleep(1500);
 	}
 
 	@Then("^Enter Email Address as \"([^\"]*)\"\\.$")
@@ -112,7 +111,9 @@ public class SignUp_Step extends SetupClass {
 	}
 
 	@Then("^Enter Password as \"([^\"]*)\"\\.$")
-	public void enter_password(String pwd) {
+	public void enter_password(String pwd) throws InterruptedException {
+		js.executeScript("window.scrollBy(0,200)");
+		Thread.sleep(1000);
 		webelement = driver.findElement(SignupObject.password);
 		webelement.click();
 		wait.implictywait(driver);
@@ -124,7 +125,7 @@ public class SignUp_Step extends SetupClass {
 	}
 
 	@Then("^Enter Confirm password as \"([^\"]*)\"\\.$")
-	public void enter_Confirm_password_as(String Cpswd) throws InterruptedException {
+	public void enter_Confirm_password_as(String Cpswd) throws Throwable {
 		webelement = driver.findElement(SignupObject.Cpassword);
 		wait.implictywait(driver);
 		webelement.click();
@@ -132,7 +133,7 @@ public class SignUp_Step extends SetupClass {
 		webelement.clear();
 		wait.implictywait(driver);
 		webelement.sendKeys(Cpswd);
-		Thread.sleep(1000);
+		wait.implictywait(driver);
 		log.info("It's entering the user password");
 	}
 
@@ -256,9 +257,10 @@ wait.implictywait(driver);
 
 	@Then("^Select price subscription\\.$")
 	public void select_price_subscription() throws InterruptedException {
+		js.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(1000);
 		List <WebElement> listings = driver.findElements(By.xpath("//*[contains(text(),' Join now ')]"));
 		int randomValue = rad.nextInt(listings.size()); //Getting a random value that is between 0 and (list's size)-1
-		Thread.sleep(1000);
 		listings.get(randomValue).click();
 		Thread.sleep(2000);
 		

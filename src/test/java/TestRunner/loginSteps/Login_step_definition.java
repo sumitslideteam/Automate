@@ -177,7 +177,8 @@ public class Login_step_definition extends SetupClass {
 
 	@Then("^Select any of price subscription\\.$")
 	public void select_any_of_price_subscription() throws Throwable {
-
+		js.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(1000);
 		List<WebElement> listin  = driver.findElements(By.xpath("//*[contains(text(),' Join now ')]"));
 		int randomValue = rad.nextInt(listin .size()); // Getting a random value that is between 0 and (list's size)-1
 		Thread.sleep(1000);
@@ -287,4 +288,3 @@ public class Login_step_definition extends SetupClass {
 	}
 	
 }
-
