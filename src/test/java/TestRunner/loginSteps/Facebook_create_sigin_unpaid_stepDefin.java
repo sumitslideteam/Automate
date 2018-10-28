@@ -240,6 +240,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 
 		@Then("^Verify the payment option as on card page\\.$")
 		public void card_page() throws InterruptedException {
+			Thread.sleep(2000);
 			String actualTitle = driver.getTitle();
 			Thread.sleep(1000);
 			wait.implictywait(driver);
@@ -247,7 +248,7 @@ public class Facebook_create_sigin_unpaid_stepDefin extends SetupClass {
 			wait.implictywait(driver);
 			Assert.assertEquals(expectedTitle, actualTitle);
 			wait.implictywait(driver);
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 		}
 
 	

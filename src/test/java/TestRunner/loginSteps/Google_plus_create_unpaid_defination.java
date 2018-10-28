@@ -17,13 +17,13 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import webApp.PerformAction;
 
-public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
+public class Google_plus_create_unpaid_defination extends SetupClass {
 	PerformAction wait = new PerformAction();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Random rad = new Random();
 
 	// Open web site URl
-	@Given("^Go to the application URL\\.$")
+	@Given("^launch application\\.$")
 	public void navigates_to_website_url() throws InterruptedException {
 		// Maximize Windows
 		driver.get("https://www.slideteam.net");
@@ -47,7 +47,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		}
 	}
 
-	@And("^Select a product list as Complete ppts\\.$")
+	@And("^the product list as Complete ppts\\.$")
 	public void click_most_download() throws InterruptedException {
 		webelement = driver.findElement(SignupObject.Most);
 		webelement.click();
@@ -55,7 +55,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(1000);
 	}
 
-	@And("^Click on Project Scoping Powerpoint product\\.$")
+	@And("^Project list as Scoping Powerpoint product\\.$")
 	public void select_product() throws InterruptedException {
 		webelement = driver.findElement(SignupObject.Select_item);
 		webelement.click();
@@ -63,75 +63,74 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(2000);
 	}
 
-	@And("^Click on download presentation link\\.$")
+	@And("^go to download link\\.$")
 	public void click_on_Download_this_presentation_link() throws InterruptedException {
 		webelement = driver.findElement(SignupObject.Downloaded);
 		webelement.click();
 		Thread.sleep(1000);
 	}
 
-	@And("^Click on fblink\\.$")
-	public void fb_link() throws InterruptedException {
-		webelement = driver.findElement(FbandGP_Object.fbLink);
+	@And("^Click on Create account cta\\.")
+	public void create_accuont() throws InterruptedException {
+		webelement = driver.findElement(SignupObject.create);
 		webelement.click();
 		Thread.sleep(500);
 	}
 
-	@Then("^Facebook user enter a email as\\.$")
+	@And("^then click on Google plus link button\\.$")
+	public void fb_link() throws InterruptedException {
+		js.executeScript("window.scrollBy(0,300)");
+		Thread.sleep(500);
+		webelement = driver.findElement(FbandGP_Object.GooglePlusLink);
+		webelement.click();
+		Thread.sleep(500);
+	}
+
+	@Then("^enter a email\\.$")
 	public void enter_user_mail() throws InterruptedException {
-		
-		try {
-		webelement = driver.findElement(FbandGP_Object.Femai);
+		webelement = driver.findElement(FbandGP_Object.GPEmail);
 		webelement.click();
 		wait.implictywait(driver);
 		webelement.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("amw.vrushali@gmail.com");
+		webelement.sendKeys("tsaucelab@gmail.com");
 		wait.implictywait(driver);
-		} catch (NoSuchElementException alreadylogged) {
-
-		}
+		Thread.sleep(1000);
 	}
-	
 
-	@Then("^Facebook user enter password\\.$")
+	@Then("^Go to next page\\.$")
+	public void password_page() throws InterruptedException {
+
+		webelement = driver.findElement(FbandGP_Object.Next_cta);
+		webelement.click();
+		wait.implictywait(driver);
+		Thread.sleep(2000);
+
+	}
+
+	@Then("^enter password\\.$")
 	public void enter_user_password() throws Throwable {
-		try {
-		webelement = driver.findElement(FbandGP_Object.Fpassword);
+		webelement = driver.findElement(FbandGP_Object.GPpass);
 		webelement.click();
 		wait.implictywait(driver);
 		webelement.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("vrushali@786");
+		webelement.sendKeys("shadab@123");
 		wait.implictywait(driver);
-	} catch (NoSuchElementException alreadpass) {
-
+		Thread.sleep(1000);
 	}
 
-	}
-
-	@Then("^Login the application\\.$")
+	@Then("^Click on next button\\.$")
 	public void click_on_Login_button() throws Throwable {
-		try {
-		webelement = driver.findElement(FbandGP_Object.FbLogin);
+		webelement = driver.findElement(FbandGP_Object.Next_button);
 		wait.implictywait(driver);
 		webelement.click();
 		wait.implictywait(driver);
 		Thread.sleep(1000);
-	} catch (NoSuchElementException alredylogin) {
 
 	}
 
-		try {
-			webelement = driver.findElement(FbandGP_Object.continue_as_QA);
-			webelement.click();
-			Thread.sleep(1000);
-		} catch (NoSuchElementException qalink) {
-
-		}
-	}
-
-	@Given("^See that user is redirected to price page\\.$")
+	@Then("^Redirected to price page\\.$")
 	public void after_signup_redirect_to_price_page() throws Throwable {
 
 		String actualTitle = driver.getTitle();
@@ -143,9 +142,9 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 
 	}
 
-	@Then("^Subscribe the product\\.$")
+	@Then("^Subscribe randomly the product\\.$")
 	public void select_any_of_price_subscription() throws Throwable {
-		js.executeScript("window.scrollBy(0,300)");
+		js.executeScript("window.scrollBy(0,400)");
 		Thread.sleep(1000);
 		List<WebElement> list = driver.findElements(By.xpath("//*[contains(text(),' Join now ')]"));
 		int randomValue = rad.nextInt(list.size()); // Getting a random value that is between 0 and (list's size)-1
@@ -154,7 +153,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(2000);
 	}
 
-	@Then("^Verify the payment section information\\.$")
+	@Then("^the payment information is verify\\.$")
 	public void verify_the_payment_option_field() throws Throwable {
 		String payment_text = driver.findElement(SignupObject.payment).getText();
 		String ExpectTitle = "PAYMENT INFORMATION";
@@ -163,7 +162,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(1000);
 	}
 
-	@Then("^Verify the by default payment option as paypal\\.$")
+	@Then("^then default payment option is paypal\\.$")
 	public void see_default_payment_option_as_paypal() throws Throwable {
 		webelement = driver.findElement(SignupObject.paypay_radio_button);
 		if (!driver.findElement(SignupObject.paypay_radio_button).isSelected())
@@ -179,7 +178,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(1000);
 	}
 
-	@Then("^Enter the coupon as showing\\.$")
+	@Then("^insert coupon as display in screen\\.$")
 	public void enter_coupon() {
 		webelement = driver.findElement(SignupObject.Enter_Coupon);
 		wait.implictywait(driver);
@@ -191,7 +190,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		wait.implictywait(driver);
 	}
 
-	@Then("^Apply coupon the code\\.$")
+	@Then("^apply coupon cta\\.$")
 	public void apply_the_cuopon_code() throws Throwable {
 		webelement = driver.findElement(SignupObject.Apply_Coupon);
 		js.executeScript("arguments[0].click();", webelement);
@@ -201,7 +200,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 
 	}
 
-	@Then("^Verify the apply code is applied\\.$")
+	@Then("^Verify the apply coupon code text is appeared\\.$")
 	public void verify_the_applied_coupon_code_offer() throws Throwable {
 		String applied_code = driver.findElement(SignupObject.verify_apply_code).getText();
 		System.out.println(applied_code);
@@ -210,7 +209,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(1000);
 	}
 
-	@Then("^Go to payement page\\.$")
+	@Then("^Go to checkout payement process page\\.$")
 	public void click_on_place_order_CTA() throws Throwable {
 		webelement = driver.findElement(SignupObject.place_cta);
 		wait.implictywait(driver);
@@ -218,19 +217,19 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 		Thread.sleep(2000);
 	}
 
-	@Then("^Verify the payment page is payapal\\.$")
+	@Then("^Verify the payment screen is paypal is dispalyed\\.$")
 	public void verify_the_paypal_payement_page() throws Throwable {
 		String actualTitle = driver.getTitle();
-  Thread.sleep(1000);
+		Thread.sleep(1000);
 		System.out.println(actualTitle);
 		String expectedTitle = "Billing Information - PayPal";
 		wait.implictywait(driver);
 		Assert.assertEquals(expectedTitle, actualTitle);
-		 Thread.sleep(1000);
+		Thread.sleep(1000);
 
 	}
 
-	@Then("^Select the payment option as CARD\\.$")
+	@Then("^Click on card radio button\\.$")
 	public void select_payment_option_as_Card() throws Throwable {
 		webelement = driver.findElement(SignupObject.card_radio_button);
 		webelement.click();
@@ -244,7 +243,7 @@ public class Facebook_signin_Unpaid_stepDefinition extends SetupClass {
 
 	}
 
-	@Then("^Verify the payment page is card chekout\\.$")
+	@Then("^Verify the payment page is secure card 2checkout title\\.$")
 	public void card_page() throws InterruptedException {
 		String actualTitle = driver.getTitle();
 		Thread.sleep(1000);
