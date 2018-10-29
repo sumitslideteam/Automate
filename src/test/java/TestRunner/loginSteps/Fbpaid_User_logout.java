@@ -13,7 +13,7 @@ public class Fbpaid_User_logout extends SetupClass {
 		driver.get("https://www.facebook.com");
 		Thread.sleep(3000);
 driver.manage().deleteAllCookies();
-Thread.sleep(2000);
+Thread.sleep(5000);
 	
 	}
 

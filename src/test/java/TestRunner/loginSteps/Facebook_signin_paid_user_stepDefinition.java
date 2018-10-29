@@ -85,7 +85,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		wait.implictywait(driver);
 		webelement.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("test.shadab@gmail.com");
+		webelement.sendKeys("sumit.kumar@slidetech.in");
 		wait.implictywait(driver);
 
 		} catch (NoSuchElementException nonemaillink) {
@@ -100,7 +100,7 @@ public class Facebook_signin_paid_user_stepDefinition extends SetupClass {
 		wait.implictywait(driver);
 		webelement.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("shadab@123");
+		webelement.sendKeys("redhat2090");
 		wait.implictywait(driver);
 
 	

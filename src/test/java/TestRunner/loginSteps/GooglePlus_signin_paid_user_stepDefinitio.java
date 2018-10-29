@@ -85,7 +85,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 		wait.implictywait(driver);
 		webelement.clear();
 		wait.implictywait(driver);
-		webelement.sendKeys("shadab.sqa");
+		webelement.sendKeys("selenium_testing@slidetech.in");
 		wait.implictywait(driver);
 		Thread.sleep(1000);
 		
@@ -111,7 +111,7 @@ public class GooglePlus_signin_paid_user_stepDefinitio extends SetupClass {
 				wait.implictywait(driver);
 				webelement.clear();
 				wait.implictywait(driver);
-				webelement.sendKeys("pass@w0rd@1");
+				webelement.sendKeys("slideteam");
 				wait.implictywait(driver);
 				Thread.sleep(1000);
 			
